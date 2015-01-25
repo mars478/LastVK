@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <link href="resources/css/page.css" rel="stylesheet" />
+        <script src="resources/js/jquery-2.1.1.min.js"></script>
+        <script src="resources/js/underscore.js"></script>
+        <script src="resources/js/backbone.js"></script>
+        <script src="resources/js/app.js"></script>
+        <script src="resources/js/view/new.js"></script>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="menu"> <!-- Блок меню -->
+            <ul>
+                <li><a href="#!/">Start</a></li>
+                <li><a href="#!/success">Success</a></li>
+                <li><a href="#!/error">Error</a></li>
+            </ul>
+        </div>
+
+        <div id="start" class="block">
+            <div class="userplace">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="artist">Artist: </label>
+                        </td>
+                        <td>
+                            <input type="text" id="artist" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="title">Title: </label>
+                        </td>
+                        <td>
+                            <input type="text" id="title" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" id="saveBtn" value="Save" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="error" class="block">
+            Ошибка такой пользователь не найден.
+        </div>
+        <div id="success" class="block">
+            Пользователь найден.
+        </div>
+
+    </body>
+</html>

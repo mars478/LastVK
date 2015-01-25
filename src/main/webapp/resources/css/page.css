@@ -75,3 +75,8 @@ body {
     -webkit-box-shadow: 0 0 5px rgba(150, 150, 150, 10); 
     -moz-box-shadow: 0 0 5px rgba(150, 150, 150, 10); 
 }
+
+#error, #success
+{
+    display: none;
+}
