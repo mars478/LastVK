@@ -13,3 +13,12 @@ function reload(id) {
         }
     });
 }
+
+var blockApp = function () {
+    $('body').append("<div id='blockDiv'></div><span id='blockText'><span>Wait</span></span>")
+};
+
+var unblockApp = function () {
+    $('#blockDiv').remove();
+    $('#blockText').remove();
+}

@@ -1,3 +1,18 @@
+var jspLoad = function (path) {
+    $.ajax({
+        url: "/LastVK/" + path,
+        method: "POST",
+        success: function (data, textStatus, response) {
+            console.log(path + ':success');
+            $('#mainPanel').html(response.responseText);
+        },
+        error: function (response) {
+            console.warn(path + ' jsp get fail:');
+            console.warn(response);
+        }
+    });
+}
+
 var Controller = Backbone.Router.extend({
     routes: {
         "": "start", // Пустой hash-тэг
@@ -5,13 +20,25 @@ var Controller = Backbone.Router.extend({
         "!/success": "success", // Блок удачи
         "!/error": "error", // Блок ошибки
         "!/push": "push", // затолкать
-        "!/pull": "pull"  // вытянуть
+        "!/pull": "pull", // вытянуть
+        "!/alist": "alist", // ввод списка исполнителей
+        "!/lastfm": "lastfm" // ввод имени пользователя
+    },
+    lastfm: function () {
+        console.log('lastfm');
+        jspLoad('lastfm');
+    },
+    alist: function () {
+        console.log('alist!');
+        jspLoad('alist');
     },
     start: function () {
+        console.log('start!');
         $(".block").hide(); // Прячем все блоки
         $("#start").show(); // Показываем нужный
     },
     success: function () {
+        console.log('success!');
         $(".block").hide();
         $("#success").show();
     },
